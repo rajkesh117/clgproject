@@ -1,5 +1,51 @@
-<div class="container">
-    <div>
-        <h1>hello</h1>
+<div style="height: 100vh;">
+    <div class="book-bus-home">
+        <div>
+            <label class="description">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam, perferendis voluptatum officiis
+                pariatur sunt molestias repellendus, tempore veritatis quo vero eum ipsa consequatur dignissimos
+                asperiores qui quisquam repellat odit mollitia.
+            </label>
+        </div>
+        <div class="row" style="width: 36%;">
+            <div class="booking-card">
+                <mat-card>
+                    <mat-card-content>Search Your Trip</mat-card-content>
+                    <form class="example-form">
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Bording City</mat-label>
+                            <input type="text" aria-label="Number" matInput [formControl]="staertPoint"
+                                [matAutocomplete]="auto">
+                            <mat-autocomplete #auto="matAutocomplete">
+                                <mat-option *ngFor="let option of bordingfilteredOptions | async" [value]="option">
+                                    {{option}}
+                                </mat-option>
+                            </mat-autocomplete>
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Destination City</mat-label>
+                            <input type="text" aria-label="Number" matInput [formControl]="endPoint"
+                                [matAutocomplete]="auto">
+                            <mat-autocomplete #auto="matAutocomplete">
+                                <mat-option *ngFor="let option of destiCity | async" [value]="option">
+                                    {{option}}
+                                </mat-option>
+                            </mat-autocomplete>
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Journey Date</mat-label>
+                            <input type="date" matInput>
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Number of Persons</mat-label>
+                            <input type="number" matInput>
+                        </mat-form-field>
+                        <div>
+                            <button class="button-71" role="button">Search</button>
+                        </div>
+                    </form>
+                </mat-card>
+            </div>
+        </div>
     </div>
 </div>
