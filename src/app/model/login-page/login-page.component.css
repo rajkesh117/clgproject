@@ -1,0 +1,33 @@
+.cont{
+    height : 82vh;
+    background-color: black;
+}
+.login-card{
+    margin-top: 6%;
+    float: left;
+    margin-left: 38%;
+    width: 29%;
+}
+.mat-form-field {
+    width: 98%;
+    text-align: left;
+    padding: 4%;
+}
+.mat-card {
+    height: 62vh;
+    width: 100%;
+    /* transition: 0.3s; */
+}
+.captcha{
+    background-color: black;
+    border:1px solid white;
+    color:white;
+    text-align: center;
+    align-items: center;
+    font-size: 30px;
+}
+.refresh-captcha{
+    background-color: white;
+    color:black;
+    cursor: pointer;
+}

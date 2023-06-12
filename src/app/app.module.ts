@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LandingpageComponent } from './model/landingpage/landingpage.component';
 import { HomepageComponent } from './model/homepage/homepage.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -41,11 +40,11 @@ import { ShowBusComponent } from './model/show-bus/show-bus.component';
 import { BookBusComponent } from './model/book-bus/book-bus.component';
 import { ViewTicketComponent } from './model/view-ticket/view-ticket.component';
 import { ViewProfileComponent } from './model/view-profile/view-profile.component';
+import { LoginPageComponent } from './model/login-page/login-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LandingpageComponent,
     HomepageComponent,
     DashboardComponent,
     HeaderComponent,
@@ -54,6 +53,7 @@ import { ViewProfileComponent } from './model/view-profile/view-profile.componen
     BookBusComponent,
     ViewTicketComponent,
     ViewProfileComponent,
+    LoginPageComponent,
   ],
   imports: [
     BrowserModule,

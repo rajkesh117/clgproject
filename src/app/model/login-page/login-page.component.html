@@ -1,0 +1,25 @@
+<div class="cont">
+    <div class="login-card">
+        <mat-card>
+            <mat-card-content>Login</mat-card-content>
+            <form class="example-form">
+                <mat-form-field>
+                    <mat-label>User Name</mat-label>
+                    <input type="text" matInput>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Password</mat-label>
+                    <input type="text" matInput>
+                </mat-form-field>
+                <br>
+                <br>
+                <!-- <span>Captcha</span><br> -->
+                <div class="captcha">
+                    <span>{{captcha}}</span>
+                </div>
+                <button class="button-71" (click)="randomString(5)">Refresh</button>
+            </form>
+            <button class="button-71" routerLink="/HomepageComponent">Login</button>
+        </mat-card>
+    </div>
+</div>
