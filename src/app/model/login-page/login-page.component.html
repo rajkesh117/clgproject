@@ -1,25 +1,70 @@
 <div class="cont">
-    <div class="login-card">
+    <div>
+        <button (click)="isLogin = true">Login</button>
+        <button (click)="isLogin = false">Register</button>
+    </div>
+    <div class="login-card" *ngIf="isLogin">
         <mat-card>
-            <mat-card-content>Login</mat-card-content>
-            <form class="example-form">
+            <mat-card-content class="register">Login</mat-card-content>
+            <form class="example-form" [formGroup]="forms">
                 <mat-form-field>
-                    <mat-label>User Name</mat-label>
-                    <input type="text" matInput>
+                    <mat-label>Email Id</mat-label>
+                    <input type="text" matInput formControlName="emailId">
                 </mat-form-field>
                 <mat-form-field>
                     <mat-label>Password</mat-label>
-                    <input type="text" matInput>
+                    <input type="text" matInput formControlName="password">
                 </mat-form-field>
                 <br>
                 <br>
                 <!-- <span>Captcha</span><br> -->
-                <div class="captcha">
+                <!-- <div class="captcha">
                     <span>{{captcha}}</span>
-                </div>
+                </div> -->
                 <button class="button-71" (click)="randomString(5)">Refresh</button>
             </form>
-            <button class="button-71" routerLink="/HomepageComponent">Login</button>
+            <button class="btn-1" (click)="login()">Login</button>
+        </mat-card>
+    </div>
+    <div class="login-card" *ngIf="!isLogin">
+        <mat-card>
+            <mat-card-content class="register">Register</mat-card-content>
+            <form class="example-form" [formGroup]="forms" name="forms">
+                <mat-form-field>
+                    <mat-label>Name</mat-label>
+                    <input type="text" formControlName="name" matInput>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Email Id</mat-label>
+                    <input type="text" formControlName="emailId" matInput>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Password</mat-label>
+                    <input type="text" formControlName="password" matInput>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Date of Birth</mat-label>
+                    <input type="date" formControlName="dateOfBirth" matInput>
+                </mat-form-field>
+                <br>
+                <br>
+                <!-- <span>Captcha</span><br> -->
+                <!-- <div class="captcha">
+                    <span>{{captcha}}</span>
+                </div>
+                <button class="button-71" (click)="randomString(5)">Refresh</button> -->
+            </form>
+            <div *ngIf="!isemailVerified">
+                <p class="text-danger">You need to verify your email for Registration</p>
+                <mat-form-field *ngIf="apiOTP != undefined">
+                    <mat-label>OTP</mat-label>
+                    <input type="text" [(ngModel)]="enteredOTP" matInput>
+                </mat-form-field>
+                <button *ngIf="apiOTP != undefined" class="btn-1" (click)="checkotp()">Verify</button>
+                <button *ngIf="apiOTP == undefined" class="btn-1" (click)="verifyEmailwithOTP()">Get OTP</button>
+            </div>
+
+            <button *ngIf="isemailVerified" class="btn-1" (click)="register()">Register</button>
         </mat-card>
     </div>
 </div>

@@ -1,5 +1,6 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~ngx-spinner/animations/ball-circus.css";
 
 .button-71 {
     padding:2%;

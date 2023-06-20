@@ -1,10 +1,15 @@
+<app-header></app-header>
 <div>
+    <div>
+        <button><mat-icon>add_circle</mat-icon></button>
+    </div>
     <div class="top-card com-font">
         <span>Avaliable Buses</span>
         <mat-card>
             <mat-card-content class="com-font bus-name">Bus Name</mat-card-content>
             <div>
-                <label>Date:01/01/0001</label>
+                <label>StartDate:01/01/0001__</label>
+                <label> __EndDate:01/01/0001</label>
             </div>
             <div class="city-div">
                 <label class="from-city">Pune</label>
@@ -16,8 +21,12 @@
                 <span class="to-city">4200-Rs</span>
             </div>
             <div>
-                <button class="book-button">Book</button>
+                <button class="book-button">Edit</button>
             </div>
-          </mat-card>
+            <div>
+                <button class="book-button">Delete</button>
+            </div>
+        </mat-card>
     </div>
 </div>
+<app-footer></app-footer>

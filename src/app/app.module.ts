@@ -11,6 +11,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatSelectModule} from '@angular/material/select';
+import { HttpClientModule } from '@angular/common/http';
 import {MatSliderModule} from '@angular/material/slider';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatMenuModule} from '@angular/material/menu';
@@ -41,6 +42,10 @@ import { BookBusComponent } from './model/book-bus/book-bus.component';
 import { ViewTicketComponent } from './model/view-ticket/view-ticket.component';
 import { ViewProfileComponent } from './model/view-profile/view-profile.component';
 import { LoginPageComponent } from './model/login-page/login-page.component';
+import { DatePipe } from '@angular/common';
+import { AddTripComponent } from './model/admin-page/add-trip/add-trip.component';
+import { AddEditTripDialougeComponent } from './model/dialouges/add-edit-trip-dialouge/add-edit-trip-dialouge.component';
+import { NgxSpinnerModule } from "ngx-spinner";
 
 @NgModule({
   declarations: [
@@ -54,6 +59,8 @@ import { LoginPageComponent } from './model/login-page/login-page.component';
     ViewTicketComponent,
     ViewProfileComponent,
     LoginPageComponent,
+    AddTripComponent,
+    AddEditTripDialougeComponent,
   ],
   imports: [
     BrowserModule,
@@ -90,10 +97,14 @@ import { LoginPageComponent } from './model/login-page/login-page.component';
     MatSortModule,
     MatPaginatorModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    NgxSpinnerModule
     
   ],
-  providers: [],
+  exports: [
+    NgxSpinnerModule,],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

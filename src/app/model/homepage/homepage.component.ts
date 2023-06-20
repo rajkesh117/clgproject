@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { Observable, startWith, map } from 'rxjs';
 
 @Component({
@@ -14,6 +15,7 @@ export class HomepageComponent implements OnInit {
   bordingfilteredOptions: Observable<string[]> | undefined;
   destiCity:Observable<string[]> | undefined;
   forms: any;
+  constructor(private spinner: NgxSpinnerService) { }
 
   ngOnInit() {
     this.bordingfilteredOptions = this.staertPoint.valueChanges.pipe(
@@ -27,6 +29,13 @@ export class HomepageComponent implements OnInit {
   }
 
 
+  search(){
+    this.spinner.show();
+    setTimeout(() => {
+      /** spinner ends after 5 seconds */
+      this.spinner.hide();
+    }, 5000);
+  }
 
   private _filter(value: string): string[] {
     const filterValue = value.toLowerCase();

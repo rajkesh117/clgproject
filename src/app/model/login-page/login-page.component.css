@@ -1,12 +1,25 @@
 .cont{
-    height : 82vh;
-    background-color: black;
+    height : 100vh;
+    background-image:url('../../../assets/loginpage.png');
+    background-size: cover;
+}
+.register{
+    text-align: center;
+    background: #3b205d;
+    margin-top: -13px;
+    width: 106%;
+    color: white;
+    font-weight: bold;
+    font-size: 25px;
+    font-family: ui-sans-serif;
+    margin-left: -13px;
+    border-radius: 40% 1% 40% 1%;
 }
 .login-card{
-    margin-top: 6%;
-    float: left;
-    margin-left: 38%;
-    width: 29%;
+    margin-top: 3%;
+    float: right;
+    margin-right: 2%;
+    width: 30%;
 }
 .mat-form-field {
     width: 98%;
@@ -14,7 +27,7 @@
     padding: 4%;
 }
 .mat-card {
-    height: 62vh;
+    height: 85vh;
     width: 100%;
     /* transition: 0.3s; */
 }
@@ -30,4 +43,95 @@
     background-color: white;
     color:black;
     cursor: pointer;
+}
+.verify_otp{
+    
+}
+.btn-1 {
+    font-family: Hack, monospace;
+    background: #0F0F6D;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 2em;
+    padding: 1.5rem;
+    border: 0;
+    transition: all 0.5s;
+    border-radius: 10px;
+    width: auto;
+    position: relative;
+
+    &::after {
+        /* content: "\f054";
+        font-family: "Font Awesome 5 Pro"; */
+        font-weight: 400;
+        position: absolute;
+        left: 85%;
+        top: 31%;
+        right: 5%;
+        bottom: 0;
+        opacity: 0;
+
+    }
+
+    &:hover {
+        background: #2b2bff;
+        transition: all 0.5s;
+        border-radius: 10px;
+        box-shadow: 0px 6px 15px #0000ff61;
+        padding: 1.5rem 3.5rem 1.5rem 1.5rem;
+
+        &::after {
+            opacity: 1;
+            transition: all 0.5s;
+
+        }
+    }
+
+
+}
+.login-btn {
+    font-family: Hack, monospace;
+    background: #bbff00;
+    color: #1d1d1d;
+    cursor: pointer;
+    font-size: 2em;
+    padding: 1.5rem;
+    border: 0;
+    transition: all 0.5s;
+    border-radius: 10px;
+    width: auto;
+    position: relative;
+    min-width: 250px;
+
+    &::after {
+        content: "\f2f6";
+        font-family: "Font Awesome 5 Pro";
+        font-weight: 400;
+        position: absolute;
+        left: 80%;
+        top: 54%;
+        right: 0;
+        bottom: 0;
+        opacity: 0;
+        transform: translate(-50%, -50%);
+
+    }
+
+    &:hover {
+        background: #2b2bff;
+        transition: all 0.5s;
+        border-radius: 10px;
+        box-shadow: 0px 6px 15px #0000ff61;
+        padding: 1.5rem 3rem 1.5rem 1.5rem;
+        color: #ffffff;
+
+        &::after {
+            opacity: 1;
+            transition: all 0.5s;
+            color: #ffffff;
+
+        }
+    }
+
+
 }

@@ -42,7 +42,7 @@
                             <input type="number" matInput>
                         </mat-form-field>
                         <div>
-                            <button class="button-71" role="button">Search</button>
+                            <button class="button-71" role="button" (click)="search()">Search</button>
                         </div>
                     </form>
                 </mat-card>
@@ -50,4 +50,5 @@
         </div>
     </div>
 </div>
+<ngx-spinner type="ball-scale-multiple"><span style="color: white; font-weight: bold;">Please Wait</span></ngx-spinner>
 <app-footer></app-footer>
