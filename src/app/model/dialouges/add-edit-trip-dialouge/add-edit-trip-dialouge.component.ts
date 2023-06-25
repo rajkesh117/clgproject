@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { addTrip } from 'src/app/Classes/Book_Bus_classes';
 import { adminService } from 'src/app/services/adminService';
 
@@ -11,12 +13,20 @@ import { adminService } from 'src/app/services/adminService';
 export class AddEditTripDialougeComponent implements OnInit {
 
   public forms: any;
-  constructor(private adminService : adminService) { }
+  constructor(private adminService: adminService, public dialogRef: MatDialogRef<AddEditTripDialougeComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any, private spinner: NgxSpinnerService) { }
 
   ngOnInit(): void {
-    this.form();
+    if(this.data.status == 1){
+      this.form();
+    }{
+      this.formedit();
+    }
   }
 
+  onCancel(): void {
+    this.dialogRef.close();
+  }
   form() {
     this.forms = new FormGroup({
       tripName: new FormControl('', Validators.required),
@@ -28,11 +38,27 @@ export class AddEditTripDialougeComponent implements OnInit {
       fair: new FormControl('', Validators.required),
     })
   }
+  formedit() {
+    this.forms = new FormGroup({
+      tripName: new FormControl(this.data.form.tripName, Validators.required),
+      startDate: new FormControl(new Date(this.data.form.startDate), Validators.required),
+      endDate: new FormControl(new Date(this.data.form.endDate), Validators.required),
+      noOfSeats: new FormControl(this.data.form.noOfSeats, Validators.required),
+      startCity: new FormControl(this.data.form.startCity, Validators.required),
+      destinationCity: new FormControl(this.data.form.destinationCity, Validators.required),
+      fair: new FormControl(this.data.form.fair, Validators.required),
+    })
+  }
 
-  mapping(){
+  mapping() {
     let tripdata = new addTrip();
-    tripdata._id = "";
-    tripdata.admin_emailId = localStorage.getItem('username') || "";
+    if(this.data.form){
+      tripdata._id = this.data.form._id;
+    }
+    else{
+      tripdata._id = "";
+    }
+    tripdata.adminEmail = localStorage.getItem('username') || "";
     tripdata.tripName = this.forms.value.tripName;
     tripdata.startDate = this.forms.value.startDate;
     tripdata.endDate = this.forms.value.endDate;
@@ -44,15 +70,50 @@ export class AddEditTripDialougeComponent implements OnInit {
     return tripdata;
   }
 
+  EditData(){
+    if (!this.forms.valid) {
+      window.alert("Please fill Required Fields");
+      return;
+    }
+    this.spinner.show();
+    let registerdata = this.mapping();
+    if (confirm("Are you sure you want to Delete") == true) {
+      
+      this.spinner.show();
+      this.adminService.addTripData(registerdata).subscribe(
+        (res) => {
+          this.spinner.hide();
+          if (res) {
+            window.alert("Edited Successfull");
+            this.onCancel()
+          }
+        },
+        (error) => {
+          this.spinner.hide();
+          window.alert("Somthing went wrong");
+        }
+      )
+    } else {
+      this.spinner.hide();
+      return;
+    }
+  }
+
   addTrip() {
     if (!this.forms.valid) {
       window.alert("Please fill Required Fields");
       return;
     }
+    this.spinner.show();
     let registerdata = this.mapping();
     this.adminService.addTripData(registerdata).subscribe(
       (res) => {
-        if (res) {
+        this.spinner.hide();
+        if (res.result) {
+          this.onCancel();
+        }
+        else {
+          window.alert("Somthing went wrong data not added");
         }
       },
       (error) => {

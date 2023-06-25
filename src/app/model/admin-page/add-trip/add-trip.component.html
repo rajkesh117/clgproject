@@ -1,32 +1,34 @@
 <app-header></app-header>
-<div>
+<div class="main">
     <div>
-        <button><mat-icon>add_circle</mat-icon></button>
-    </div>
-    <div class="top-card com-font">
+        <button (click)="openDialog(1,null)"><mat-icon>add_circle</mat-icon></button>
         <span>Avaliable Buses</span>
-        <mat-card>
-            <mat-card-content class="com-font bus-name">Bus Name</mat-card-content>
-            <div>
-                <label>StartDate:01/01/0001__</label>
-                <label> __EndDate:01/01/0001</label>
-            </div>
-            <div class="city-div">
-                <label class="from-city">Pune</label>
-                <label>----to----</label>
-                <label class="to-city">Delhi</label>
-            </div>
-            <div>
-                <label class="from-city">Avaliable Seats - 40</label>
-                <span class="to-city">4200-Rs</span>
-            </div>
-            <div>
-                <button class="book-button">Edit</button>
-            </div>
-            <div>
-                <button class="book-button">Delete</button>
-            </div>
-        </mat-card>
+    </div>
+    <div class="top-card com-font row" *ngIf="tripinfo">
+        <div class="tripdata" *ngFor="let data of tripinfo">
+            <mat-card>
+                <mat-card-content class="com-font bus-name">{{data.tripName}}</mat-card-content>
+                <div>
+                    <label>StartDate : <span> {{data.startDate | date:'MMM d, y, h:mm a'}}</span></label>
+                    <label style="float: right;">EndDate :<span> {{data.endDate | date:'MMM d, y, h:mm a'}}</span></label>
+                </div>
+                <div class="city-div">
+                    <label class="from-city">Bording City : {{data.startCity}}</label>
+                    <label class="to-city">Destination City : {{data.destinationCity}}</label>
+                </div>
+                <div>
+                    <label class="from-city">Avaliable Seats - {{data.noOfSeats}}</label>
+                    <span class="to-city">{{data.fair}}-Rs</span>
+                </div>
+                <div>
+                    <button class="book-button" (click)="Edit(data)">Edit</button>
+                </div>
+                <div>
+                    <button class="book-button" (click)="DeleteTrip(data)">Delete</button>
+                </div>
+            </mat-card>
+        </div>
     </div>
 </div>
+<ngx-spinner *ngIf="dialougeopen" style="color:white;" type="ball-scale-multiple">Loading...</ngx-spinner>
 <app-footer></app-footer>

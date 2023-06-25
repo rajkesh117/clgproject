@@ -1,8 +1,10 @@
 .top-card {
     float: left;
-    margin-left: 13%;
-    margin-top: 7%;
-    width: 76%;
+    margin-left: 5%;
+    margin-top: 1%;
+    width: 90%;
+    height: 73%;
+    overflow: auto;
 }
 
 .com-font {
@@ -30,4 +32,15 @@
 
 .book-button {
     margin-left: 50%;
+}
+
+.tripdata {
+    width: 50%;
+    float: left;
+    margin-top: 0%;
+    padding: 1%;
+}
+
+.main {
+    height: 81vh;
 }

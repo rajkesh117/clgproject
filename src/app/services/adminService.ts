@@ -16,7 +16,11 @@ export class adminService {
     }
 
     addTripData(data: addTrip) {
-        const url = environment.apiUrl + 'api/login/loginUser';
+        const url = environment.apiUrl + 'api/AddTrip/AddOrEditBus';
         return this.httpClient.post<any>(url, data);
+    }
+    getTripData(username: string){
+        const url = environment.apiUrl + 'api/AddTrip/getTripDataByUserId?username='+username;
+        return this.httpClient.get<any>(url);
     }
 }

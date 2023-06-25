@@ -15,7 +15,7 @@ export class search_Bus {
 
 export class addTrip {
     public _id: String | undefined;
-    public admin_emailId: String | undefined;
+    public adminEmail: String | undefined;
     public tripName: String | undefined;
     public startDate: Date | undefined;
     public endDate: Date | undefined;

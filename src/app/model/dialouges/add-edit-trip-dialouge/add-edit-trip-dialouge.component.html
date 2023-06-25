@@ -1,1 +1,53 @@
-<p>add-edit-trip-dialouge works!</p>
+<!-- <h1 mat-dialog-title>Welcome user</h1>
+<div mat-dialog-content>
+<p>What's your favorite animal?</p>
+<mat-form-field>
+	<input matInput [(ngModel)]="data.animal">
+</mat-form-field>
+</div>
+<div mat-dialog-actions>
+<button mat-button (click)="onCancel()">No Thanks</button>
+<button mat-button [mat-dialog-close]="data.animal"
+			cdkFocusInitial>Ok</button>
+</div> -->
+<div>
+    <mat-card>
+        <div class="close" (click)="onCancel()">x</div>
+        <mat-card-content class="register">Add New Trip</mat-card-content>
+        <form class="example-form" [formGroup]="forms" name="forms">
+            <mat-form-field>
+                <mat-label>Trip Name/ Bus Name</mat-label>
+                <input type="text" formControlName="tripName" matInput>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Start Date</mat-label>
+                <input type="datetime-local" formControlName="startDate" matInput>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>End Date</mat-label>
+                <input type="datetime-local" formControlName="endDate" matInput>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Start City</mat-label>
+                <input type="text" formControlName="startCity" matInput>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Destination City</mat-label>
+                <input type="text" formControlName="destinationCity" matInput>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Ticket Charges</mat-label>
+                <input type="text" formControlName="fair" matInput>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>No Of Seats</mat-label>
+                <input type="text" formControlName="noOfSeats" matInput>
+            </mat-form-field>
+            <br>
+            <br>
+            <button *ngIf="data.status == 1" class="button-71" (click)="addTrip()">Save</button> 
+            <button *ngIf="data.status == 2" class="button-71" (click)="EditData()">Edit</button> 
+        </form>
+    </mat-card>
+</div>
+<ngx-spinner style="color:white;" type="ball-scale-multiple">Saving Trip Data</ngx-spinner>

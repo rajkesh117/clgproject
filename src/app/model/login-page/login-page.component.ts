@@ -100,10 +100,7 @@ export class LoginPageComponent implements OnInit {
     this.spinner.show();
     this.loginservice.loginuser(loginform).subscribe(
       (res) => {
-        setTimeout(() => {
-          /** spinner ends after 5 seconds */
-          this.spinner.hide();
-        }, 5000);
+        this.spinner.hide();
         if (res) {
           if (autoapicall) {
             localStorage.removeItem('username');
@@ -123,6 +120,7 @@ export class LoginPageComponent implements OnInit {
         }
       },
       (error) => {
+        this.spinner.hide();
         window.alert("Somthing went wrong");
       }
     )

@@ -1,0 +1,15 @@
+.close{
+    font-size: 32px;
+    font-weight: bold;
+    float: right;
+    color: #f8eded;
+    background-color: red;
+    margin-top: -8%;
+    margin-right: -7.2%;
+    border: 1px solid red;
+    padding: 3%;
+}
+.mat-form-field{
+    width: 49%;
+    padding: 2%;
+}
