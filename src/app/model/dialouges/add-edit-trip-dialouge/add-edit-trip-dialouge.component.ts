@@ -17,9 +17,10 @@ export class AddEditTripDialougeComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: any, private spinner: NgxSpinnerService) { }
 
   ngOnInit(): void {
-    if(this.data.status == 1){
+    if (this.data.status == 1) {
       this.form();
-    }{
+    }
+    else {
       this.formedit();
     }
   }
@@ -52,10 +53,10 @@ export class AddEditTripDialougeComponent implements OnInit {
 
   mapping() {
     let tripdata = new addTrip();
-    if(this.data.form){
+    if (this.data.form) {
       tripdata._id = this.data.form._id;
     }
-    else{
+    else {
       tripdata._id = "";
     }
     tripdata.adminEmail = localStorage.getItem('username') || "";
@@ -67,10 +68,11 @@ export class AddEditTripDialougeComponent implements OnInit {
     tripdata.fair = this.forms.value.fair;
     tripdata.noOfSeats = this.forms.value.noOfSeats;
     tripdata.isDeleted = false;
+    tripdata.numberOfTrips = [];
     return tripdata;
   }
 
-  EditData(){
+  EditData() {
     if (!this.forms.valid) {
       window.alert("Please fill Required Fields");
       return;
@@ -78,7 +80,7 @@ export class AddEditTripDialougeComponent implements OnInit {
     this.spinner.show();
     let registerdata = this.mapping();
     if (confirm("Are you sure you want to Delete") == true) {
-      
+
       this.spinner.show();
       this.adminService.addTripData(registerdata).subscribe(
         (res) => {

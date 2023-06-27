@@ -11,6 +11,53 @@ a{
     cursor: pointer;
     transition: 0.3s;
 }
+.navbar {
+    position: relative;
+    min-height: 50px;
+    margin-bottom: 0px;
+    border: 1px solid transparent;
+}
+.navbar-default {
+    background-color: #182d4e;
+    border-color: #e7e7e7;
+}
+.navbar-default .navbar-nav>li>a {
+    color: #fff;
+}
+.dropdown-menu>li>a:hover {
+    color: white;
+    text-decoration: none;
+    background-color: #b40000;
+}
+a{
+    color: white;
+}
+a:focus{
+    color: white;
+    background-color: #b40000;
+}
+a::after{
+    color: white;
+    background-color: #b40000;
+}
+.navbar-default .navbar-nav>.open>a:hover {
+    color: white;
+    background-color: #b40000;
+}
+.logo {
+    width: 10vw;
+    margin-left: -17%;
+    background-size: cover;
+    height: 6vh;
+    margin-top: 2.5%;
+    background-image: url('../../../assets/logo3.png');
+}
+/* .user{
+    width: 10vw;
+    background-size: cover;
+    height: 6vh;
+    background-image: url('../../../assets/user.png');
+} */
 /* a:hover{
     text-decoration:none;
     color:black;

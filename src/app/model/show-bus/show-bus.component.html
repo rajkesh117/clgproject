@@ -1,25 +1,55 @@
-<div>
-    <div class="top-card com-font">
-        <div>
-            <span>Avaliable Buses</span>
+<app-header></app-header>
+<div class="maincard">
+    <div>
+        <div class="booking-card">
             <mat-card>
-                <mat-card-content class="com-font bus-name">Bus Name</mat-card-content>
-                <div>
-                    <label>Date:01/01/0001</label>
-                </div>
-                <div class="city-div">
-                    <label class="from-city">Pune</label>
-                    <label>----to----</label>
-                    <label class="to-city">Delhi</label>
-                </div>
-                <div>
-                    <label class="from-city">Avaliable Seats - 40</label>
-                    <span class="to-city">4200-Rs</span>
-                </div>
-                <div>
-                    <button class="book-button">Book</button>
-                </div>
+                <mat-card-content class="headtext">Search Your Trip</mat-card-content>
+                <form class="example-form" [formGroup]="forms" name="forms">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Bording City</mat-label>
+                        <input type="text" aria-label="Number" matInput formControlName="startCity">
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Destination City</mat-label>
+                        <input type="text" aria-label="Number" matInput formControlName="endCity">
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width" style="width:100%">
+                        <mat-label>Journey Date</mat-label>
+                        <input type="date" matInput formControlName="journeyDate">
+                    </mat-form-field>
+                    <div>
+                        <button class="button-71" role="button" (click)="search()">Modify</button>
+                    </div>
+                </form>
             </mat-card>
         </div>
     </div>
+    <div class="top-card com-font">
+        <!-- <span>Avaliable Buses</span> -->
+        <div class="cardtop" *ngFor="let element of data">
+            <div>
+                <mat-card class="">
+                    <mat-card-content class="com-font bus-name">{{element.busName}}</mat-card-content>
+                    <div>
+                        <label class="from-city">Date : {{element.startDate | date:'dd/MM/yyyy'}}</label>
+                        <label class="to-city">BoardingTime : {{element.startTime | date:"hh:mm a"}}</label>
+                    </div>
+                    <div class="city-div">
+                        <label class="from-city">StartCity : {{element.startCity}}</label>
+                        <!-- <label>----to----</label> -->
+                        <label class="to-city">Destination City : {{element.destinationCity}}</label>
+                    </div>
+                    <div>
+                        <label class="from-city">Avaliable Seats - {{element.avaliableSeats}}</label>
+                        <label class="to-city">Ticket Charges : {{element.fair}} Rs</label>
+                    </div>
+                    <div>
+                        <button class="book-button">Book</button>
+                    </div>
+                </mat-card>
+            </div>
+        </div>
+    </div>
 </div>
+<ngx-spinner style="color:white;" type="ball-scale-multiple">Modifying Search...</ngx-spinner>
+<app-footer></app-footer>

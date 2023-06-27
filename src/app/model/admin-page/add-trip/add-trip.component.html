@@ -1,8 +1,10 @@
 <app-header></app-header>
 <div class="main">
     <div>
-        <button (click)="openDialog(1,null)"><mat-icon>add_circle</mat-icon></button>
-        <span>Avaliable Buses</span>
+        <button style="width: 10%; margin-top: 1%; margin-left: 5.9%;" class="button-71" (click)="openDialog(1,null)">+ Add Trip</button>
+    </div>
+    <div>
+        <label style="font-size: 22px; font-weight: bold; margin-left: 45%;">Avaliable Buses</label>
     </div>
     <div class="top-card com-font row" *ngIf="tripinfo">
         <div class="tripdata" *ngFor="let data of tripinfo">
@@ -10,7 +12,8 @@
                 <mat-card-content class="com-font bus-name">{{data.tripName}}</mat-card-content>
                 <div>
                     <label>StartDate : <span> {{data.startDate | date:'MMM d, y, h:mm a'}}</span></label>
-                    <label style="float: right;">EndDate :<span> {{data.endDate | date:'MMM d, y, h:mm a'}}</span></label>
+                    <label style="float: right;">EndDate :<span> {{data.endDate | date:'MMM d, y, h:mm
+                            a'}}</span></label>
                 </div>
                 <div class="city-div">
                     <label class="from-city">Bording City : {{data.startCity}}</label>
@@ -18,12 +21,10 @@
                 </div>
                 <div>
                     <label class="from-city">Avaliable Seats - {{data.noOfSeats}}</label>
-                    <span class="to-city">{{data.fair}}-Rs</span>
+                    <label class="to-city">{{data.fair}}-Rs</label>
                 </div>
                 <div>
                     <button class="book-button" (click)="Edit(data)">Edit</button>
-                </div>
-                <div>
                     <button class="book-button" (click)="DeleteTrip(data)">Delete</button>
                 </div>
             </mat-card>

@@ -3,13 +3,32 @@
     margin-top: 10%;
     margin-right: 4%;
     width: 90%;
+    box-shadow: -3px 3px 3px 7px #cbeae4 !important;
 }
 .book-bus-home {  
     height:100vh;
-    background-image:url('https://st.redbus.in/bo-images/IND/WM/10100/1087/FR/L/VKOJX6.jpeg');
+    background-image:url('../../../assets/homeback.png');
     /* background-image: url('https://besthqwallpapers.com/Uploads/6-12-2019/114416/thumb2-scania-interlink-hd-4k-studio-2019-buses-passenger-transport.jpg'); */
     background-size: cover;
-}   
+}
+.headtext{
+  font-size: 20px;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  background-color: #182d4e;
+  border-radius: 40% 0% 40% 0%;
+}
+.secondpage{
+  height:100vh;
+    background-image:url('../../../assets/second.png');
+    background-size: cover;
+}
+.thirdpage{
+  height:100vh;
+    background-image:url('../../../assets/footer.png');
+    background-size: cover;
+}
 .description{
     margin-top: 7%;
     font-size: 22px;
@@ -19,7 +38,8 @@
     line-height: 1.4;
 }
 .mat-form-field {
-    padding: 4%;
+  padding: 3%;
+  width: 50%;
 }
 .nav-menus{
     padding:2%;

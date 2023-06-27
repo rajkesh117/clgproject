@@ -1,7 +1,8 @@
 <div class="cont">
-    <div>
-        <button (click)="isLogin = true">Login</button>
-        <button (click)="isLogin = false">Register</button>
+    <div class="headertext">
+        <span class="headt3">BOOK MY BUS</span><br>
+        <span class="headt1">ALWAYS READY TO MAKE YOUR TRIP BETTER</span><br>
+        <span class="headt2">Every step of the way</span>
     </div>
     <div class="login-card" *ngIf="isLogin">
         <mat-card>
@@ -21,9 +22,11 @@
                 <!-- <div class="captcha">
                     <span>{{captcha}}</span>
                 </div> -->
-                <button class="button-71" (click)="randomString(5)">Refresh</button>
+                <!-- <button class="button-71" (click)="randomString(5)">Refresh</button> -->
             </form>
             <button class="btn-1" (click)="login()">Login</button>
+            <div style="margin-top: 11%;
+            font-size: 15px;"><a (click)="isLogin = false" style="margin-left: 37%;">SignUp/Register</a></div>
         </mat-card>
     </div>
     <div class="login-card" *ngIf="!isLogin">
@@ -63,9 +66,16 @@
                 <button *ngIf="apiOTP != undefined" class="btn-1" (click)="checkotp()">Verify</button>
                 <button *ngIf="apiOTP == undefined" class="btn-1" (click)="verifyEmailwithOTP()">Get OTP</button>
             </div>
+            <div style="margin-top: 4%;
+            font-size: 15px;">Already Registered : <a (click)="isLogin = true">Login</a></div>
 
             <button *ngIf="isemailVerified" class="btn-1" (click)="register()">Register</button>
         </mat-card>
     </div>
+    <div>
+        <span class="bottomtext">(C) 2023-24 www.bookmybus.com</span>
+    </div>
+    <img class="logo">
 </div>
-<ngx-spinner type="ball-scale-multiple"><span style="color: white; font-weight: bold;">Logging In Please Wait</span></ngx-spinner>
+<ngx-spinner type="ball-scale-multiple"><span style="color: white; font-weight: bold;">Logging In Please
+        Wait</span></ngx-spinner>

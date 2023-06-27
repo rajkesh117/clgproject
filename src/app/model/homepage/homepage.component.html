@@ -11,11 +11,11 @@
         <div class="row" style="width: 36%;">
             <div class="booking-card">
                 <mat-card>
-                    <mat-card-content>Search Your Trip</mat-card-content>
-                    <form class="example-form">
+                    <mat-card-content class="headtext">Search Your Trip</mat-card-content>
+                    <form class="example-form" [formGroup]="forms" name="forms">
                         <mat-form-field class="example-full-width">
                             <mat-label>Bording City</mat-label>
-                            <input type="text" aria-label="Number" matInput [formControl]="staertPoint"
+                            <input type="text" aria-label="Number" matInput [formControl]="staertPoint" formControlName="startCity"
                                 [matAutocomplete]="auto">
                             <mat-autocomplete #auto="matAutocomplete">
                                 <mat-option *ngFor="let option of bordingfilteredOptions | async" [value]="option">
@@ -25,7 +25,7 @@
                         </mat-form-field>
                         <mat-form-field class="example-full-width">
                             <mat-label>Destination City</mat-label>
-                            <input type="text" aria-label="Number" matInput [formControl]="endPoint"
+                            <input type="text" aria-label="Number" matInput [formControl]="endPoint" formControlName="endCity"
                                 [matAutocomplete]="auto">
                             <mat-autocomplete #auto="matAutocomplete">
                                 <mat-option *ngFor="let option of destiCity | async" [value]="option">
@@ -33,14 +33,14 @@
                                 </mat-option>
                             </mat-autocomplete>
                         </mat-form-field>
-                        <mat-form-field class="example-full-width">
+                        <mat-form-field class="example-full-width" style="width:100%">
                             <mat-label>Journey Date</mat-label>
-                            <input type="date" matInput>
+                            <input type="date" matInput formControlName="journeyDate">
                         </mat-form-field>
-                        <mat-form-field class="example-full-width">
+                        <!-- <mat-form-field class="example-full-width">
                             <mat-label>Number of Persons</mat-label>
                             <input type="number" matInput>
-                        </mat-form-field>
+                        </mat-form-field> -->
                         <div>
                             <button class="button-71" role="button" (click)="search()">Search</button>
                         </div>
@@ -49,6 +49,12 @@
             </div>
         </div>
     </div>
+    <div class="secondpage">
+
+    </div>
+    <div class="thirdpage">
+
+    </div>
 </div>
-<ngx-spinner style="color:white;" type="ball-scale-multiple"></ngx-spinner>
-<app-footer></app-footer>
+<!-- <app-footer></app-footer> -->
+<ngx-spinner style="color:white;" type="ball-scale-multiple">Finding Avaliable Buses...</ngx-spinner>

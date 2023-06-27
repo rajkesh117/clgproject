@@ -7,7 +7,7 @@ export class login {
     public role: string | undefined
 }
 
-export class search_Bus {
+export class searchBus {
     public startCity: String | undefined;
     public endCity: String | undefined;
     public journeyDate: Date | undefined;
@@ -24,4 +24,12 @@ export class addTrip {
     public fair: String | undefined;
     public noOfSeats: String | undefined;
     public isDeleted: boolean | undefined;
+    public numberOfTrips : numberOfTrips[] | undefined;
+}
+
+export class numberOfTrips {
+
+    public JourneyDate: Date | undefined;
+    public AvailableSeats: string | undefined;
+
 }

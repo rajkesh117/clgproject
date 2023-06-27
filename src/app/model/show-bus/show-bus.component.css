@@ -1,8 +1,61 @@
 .top-card {
+    float: right;
+    margin-top: 1%;
+    width: 75%;
+    margin-right: 1%;
+    height: 80vh;
+    box-shadow: -2px 2px 12px 4px #9c9c9c;
+    padding: 1%;
+    overflow: auto;
+}
+.mat-form-field{
+    padding: 2%;
+    width: 100%;
+}
+.booking-card{
     float: left;
-    margin-left: 13%;
     margin-top: 7%;
-    width: 76%;
+    margin-left: 1%;
+    height: 40vh;
+    width: 22%;
+    box-shadow: -3px 3px 3px 7px #cbeae4 !important;
+}
+.headtext{
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    background-color: #182d4e;
+    border-radius: 40% 0% 40% 0%;
+  }
+
+.maincard {
+    height: 83.8vh;
+    width: 100%;
+    background-size: cover;
+    background-image: url('../../../assets/back.png');
+}
+
+.anime {
+    background-position: center;
+    background-size: initial;
+    background-repeat: no-repeat;
+    background-image: url('https://www.animatedimages.org/data/media/425/animated-bus-image-0022.gif');
+}
+
+.cardtop {
+    margin-bottom: 1%;
+    width: 49%;
+    float: left;
+    margin-right: 1%;
+}
+
+.mat-card {
+    padding-top: 0%;
+}
+
+label {
+    margin-bottom: unset;
 }
 
 .com-font {
@@ -19,13 +72,14 @@
 }
 
 .city-div {
-    margin-top: 0.5%;
+    margin-top: 0%;
 }
 
 .bus-name {
     text-align: center;
     background-color: #E98074;
     color: white;
+    margin-bottom: 1%;
 }
 
 .book-button {
