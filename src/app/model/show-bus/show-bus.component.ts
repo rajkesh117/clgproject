@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { searchBus } from 'src/app/Classes/Book_Bus_classes';
 import { bookBusService } from 'src/app/services/bookBusService';
+import { bookingdatatransferService } from 'src/app/services/bookingdatatransferService';
 
 @Component({
   selector: 'app-show-bus',
@@ -19,7 +20,7 @@ export class ShowBusComponent implements OnInit {
   endCity: any;
   date: any;
   constructor(private spinner: NgxSpinnerService, private bookBus: bookBusService,
-    private router: Router, private datePipe: DatePipe) { }
+    private router: Router, private datePipe: DatePipe,private datatransfer : bookingdatatransferService) { }
 
   ngOnInit(): void {
     this.getAvailableBus()
@@ -79,6 +80,11 @@ export class ShowBusComponent implements OnInit {
         window.alert("Somthing went wrong");
       }
     )
+  }
+
+  Book(event: any){
+    this.datatransfer.SendData(event);
+    this.router.navigate(['/bookticket']);
   }
 
 }

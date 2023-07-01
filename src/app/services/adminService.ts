@@ -23,4 +23,9 @@ export class adminService {
         const url = environment.apiUrl + 'api/AddTrip/getTripDataByUserId?username='+username;
         return this.httpClient.get<any>(url);
     }
+
+    getAllTrip(){
+        const url = environment.apiUrl + 'api/AddTrip/getAllTrip';
+        return this.httpClient.get<any>(url);
+    }
 }

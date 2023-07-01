@@ -1,1 +1,103 @@
-<p>book-bus works!</p>
+<app-header></app-header>
+<div>
+    <button class="button-71" (click)="back()">Back</button>
+    <div>
+        <mat-card>
+            <mat-card-content>Bus Details</mat-card-content>
+            <div>
+                <div>
+                    <label class="bookingdata">Bus/Trip Name : {{bookingData.busName}}</label>
+                    <label class="bookingdata" style="margin-left:20%;">BookingDate : {{bookingData.startDate | date:'dd/MM/yyyy'}}</label>
+                    <label class="bookingdata" style="margin-left:20%;">BoardingTime : {{bookingData.startTime | date:"hh:mm a"}}</label>
+                </div>
+                <div>
+                    <label class="bookingdata">From : {{bookingData.startCity}}</label>
+                    <label class="bookingdata" style="margin-left:31.2%;">To : {{bookingData.destinationCity}}</label>
+                    <label class="bookingdata" style="margin-left:27%;">Avaliable Seats : {{bookingData.avaliableSeats}}</label><br>
+                    <label class="bookingdata">Ticket charges for 1 person : {{bookingData.fair}}-Rs</label>
+                </div>
+            </div>
+        </mat-card>
+    </div>
+    <div>
+        <mat-card>
+            <mat-card-content class="">Contact Details</mat-card-content>
+            <form class="example-form" [formGroup]="forms" name="forms">
+                <div>
+                    <mat-form-field>
+                        <mat-label>Address</mat-label>
+                        <input type="text" formControlName="address" matInput>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Aadhar No</mat-label>
+                        <input type="text" formControlName="aadharno" matInput>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Mobile no</mat-label>
+                        <input type="text" formControlName="mobileno" matInput>
+                    </mat-form-field>
+                </div>
+                <mat-card-content class="">Passenger Details</mat-card-content>
+                <div>
+                    <mat-form-field>
+                        <mat-label>Name</mat-label>
+                        <input type="text" formControlName="name1" matInput>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Age</mat-label>
+                        <input type="text" formControlName="age1" matInput>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Gender</mat-label>
+                        <mat-select formControlName="gender1">
+                            <mat-option *ngFor="let values of gender" [value]="values.value">
+                                {{values.viewValue}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div *ngIf="person >1">
+                    <mat-form-field>
+                        <mat-label>Name</mat-label>
+                        <input type="text" formControlName="name2" matInput>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Age</mat-label>
+                        <input type="text" formControlName="age2" matInput>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Gender</mat-label>
+                        <mat-select formControlName="gender2">
+                            <mat-option *ngFor="let values of gender" [value]="values.value">
+                                {{values.viewValue}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div *ngIf="person >2">
+                    <mat-form-field>
+                        <mat-label>Name</mat-label>
+                        <input type="text" formControlName="name3" matInput>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Age</mat-label>
+                        <input type="text" formControlName="age3" matInput>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Gender</mat-label>
+                        <mat-select formControlName="gender3">
+                            <mat-option *ngFor="let values of gender" [value]="values.value">
+                                {{values.viewValue}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <button *ngIf="person != 3" class="btn-1" (click)="addPerson(1)">Add</button>
+                <button *ngIf="person !=1" class="btn-1" (click)="addPerson(2)">Remove</button>
+                <button  class="btn-1" (click)="makePayment()" >Next</button>
+                <br>
+            </form>
+        </mat-card>
+    </div>
+</div>
+<!-- <ngx-spinner style="color:white;" type="ball-scale-multiple">Saving Trip Data</ngx-spinner> -->

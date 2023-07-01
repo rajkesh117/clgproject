@@ -1,0 +1,64 @@
+<div>
+    <div *ngIf="!ispaymentpage">
+        <mat-card style="overflow: auto;">
+            <mat-card-content class="headercard">Booking Details</mat-card-content>
+            <div>
+                <div>
+                    <div>
+                        <label class="bookingdata">Bus/Trip Name : {{bookingData.busName}}</label><br>
+                        <label class="bookingdata">BookingDate : {{bookingData.bookedDate | date:'dd/MM/yyyy'}}</label>
+                        <label class="bookingdata floatr">BoardingTime : {{bookingData.bordingTime}}</label>
+                    </div>
+                    <div>
+                        <label class="bookingdata">From : {{bookingData.startCity}}</label>
+                        <label class="bookingdata floatr">To : {{bookingData.destinationCity}}</label>
+                    </div>
+                    <div>
+                        <label class="bookingdata">Ticket Charges: {{bookingData.fairPaid}} Rs</label>
+                    </div>
+                </div>
+                <div>
+                    <table style="width:100%">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Age</th>
+                                <th>Gender</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let person of bookingData.passengers">
+                                <td>{{person.name}}</td>
+                                <td>{{person.age}}</td>
+                                <td>{{person.gender}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div>
+                    <button class="btn-1" (click)="changeview()">Proceed For Payment</button>
+                </div>
+            </div>
+        </mat-card>
+    </div>
+    <div *ngIf="ispaymentpage">
+        <mat-card>
+            <mat-card-content class="headercard">Booking Details</mat-card-content>
+            <mat-form-field style="padding: 1%;">
+                <mat-label>Card Number</mat-label>
+                <input type="number" matInput>
+            </mat-form-field>
+            <mat-form-field style="padding: 1%;">
+                <mat-label>Valid Till</mat-label>
+                <input type="date" matInput>
+            </mat-form-field>
+            <mat-form-field style="padding: 2%;">
+                <mat-label>CVV</mat-label>
+                <input type="text" matInput>
+            </mat-form-field>
+            <button class="btn-1" (click)="book()">Make Payment</button>
+        </mat-card>
+    </div>
+</div>
+<ngx-spinner style="color:white;" type="ball-scale-multiple">Paying {{bookingData.fairPaid}}
+    to BookMyBus.com Please wait...</ngx-spinner>

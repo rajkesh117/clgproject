@@ -1,0 +1,38 @@
+.mat-form-field {
+    display: inline-block;
+    position: relative;
+    text-align: left;
+    width: 32%;
+    padding: 10px;
+}
+.bookingdata{
+    font-size: 17px;
+    font-weight: bold;
+}
+.btn-1 {
+    background-color: #182d4e;
+    border: 1px solid;
+    color: white;
+    font-size: 18px;
+    width: 7%;
+    font-weight: bold;
+    border: 2px solid #182d4e;
+    padding: 5px;
+    transition: 0.2s;
+    margin-left:1%
+}
+.mat-card-content {
+    display: block;
+    text-align: center;
+    font-size: 16px;
+    color: white;
+    background-color: #182d4e;
+    margin-bottom: 2px;
+}
+
+.btn-1:hover {
+    background-color: white;
+    color: #182d4e;
+    border: 2px solid #182d4e;
+    transition: 0.2s;
+}

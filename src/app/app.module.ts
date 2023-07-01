@@ -46,6 +46,7 @@ import { DatePipe } from '@angular/common';
 import { AddTripComponent } from './model/admin-page/add-trip/add-trip.component';
 import { AddEditTripDialougeComponent } from './model/dialouges/add-edit-trip-dialouge/add-edit-trip-dialouge.component';
 import { NgxSpinnerModule } from "ngx-spinner";
+import { MakepaymentComponent } from './model/dialouges/makepayment/makepayment.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +62,7 @@ import { NgxSpinnerModule } from "ngx-spinner";
     LoginPageComponent,
     AddTripComponent,
     AddEditTripDialougeComponent,
+    MakepaymentComponent,
   ],
   imports: [
     BrowserModule,

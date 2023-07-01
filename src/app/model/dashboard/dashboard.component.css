@@ -1,0 +1,26 @@
+th{
+    padding: 13px;
+    border: 2px solid white;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: #b60000;
+    color: white;
+}
+td{
+    padding: 11px;
+    border: 1px solid black;
+    text-align: center;
+    font-size: 13px;
+    font-weight: bold;
+}
+.table{
+    width:100%;
+}
+.headcard{
+    text-align: center;
+    background-color: #182d4e;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+}

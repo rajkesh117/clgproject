@@ -1,3 +1,27 @@
-<mat-card>
-    <mat-card-content>Simple card</mat-card-content>
+<app-header></app-header>
+<div>
+  <mat-card>
+    <mat-card-content class="headcard">List of All Buses</mat-card-content>
+    <table class="table">
+      <thead>
+        <th>StartCity</th>
+        <th>EndCity</th>
+        <th>Boarding Time</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Ticket Fare</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of tripData">
+          <td>{{data.startCity}}</td>
+          <td>{{data.destinationCity}}</td>
+          <td>{{data.startDate | date:"hh:mm a"}}</td>
+          <td>{{data.startDate  | date:'dd/MM/yyyy'}}</td>
+          <td>{{data.endDate  | date:'dd/MM/yyyy'}}</td>
+          <td>{{data.fair}}</td>
+        </tr>
+      </tbody>
+    </table>
   </mat-card>
+</div>
+<ngx-spinner style="color:white;" type="ball-scale-multiple">Loading...</ngx-spinner>

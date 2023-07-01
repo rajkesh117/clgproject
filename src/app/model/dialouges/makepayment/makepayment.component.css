@@ -1,0 +1,49 @@
+.bookingdata {
+    font-size: 17px;
+    font-weight: bold;
+    margin-right: 5%;
+}
+
+.floatr {
+    float: right;
+}
+
+.btn-1 {
+    background-color: #182d4e;
+    border: 1px solid;
+    color: white;
+    font-size: 18px;
+    width: 100%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    border: 2px solid #182d4e;
+    padding: 5px;
+    transition: 0.2s;
+}
+
+.btn-1:hover {
+    background-color: white;
+    color: #182d4e;
+    transition: 0.2s;
+}
+
+.headercard {
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+    background-color: #b60000;
+    color: white;
+}
+
+th {
+    padding: 2%;
+    border: 1px solid black;
+    text-align: center;
+    font-size: 18px;
+}
+
+td {
+    border: 1px solid;
+    font-size: 15px;
+    text-align: center;
+}
