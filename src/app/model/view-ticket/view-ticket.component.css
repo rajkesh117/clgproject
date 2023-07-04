@@ -1,0 +1,67 @@
+.top-card {
+    float: left;
+    margin-left: 5%;
+    margin-top: 1%;
+    width: 90%;
+    height: 73%;
+    overflow: auto;
+}
+
+.com-font {
+    font-size: 17.5px;
+}
+
+.from-city {
+    width: 60%;
+    height: 5vh;
+}
+
+.to-city {
+    float: right;
+}
+
+.city-div {
+    margin-top: 0.5%;
+}
+
+.bus-name {
+    text-align: center;
+    background-color: #b60000;
+    color: white;
+}
+
+.book-button {
+    margin-left: 50%;
+}
+
+.tripdata {
+    width: 50%;
+    float: left;
+    margin-top: 0%;
+    padding: 1%;
+}
+.book-button{
+    background-color: #182d4e;
+    border: 1px solid;
+    color: white;
+    transition: 0.2s;
+    font-size: 15px;
+    width: 20%;
+    font-weight: bold;
+    padding: 1%;
+    margin-left: 0%;
+    border: 2px solid #182d4e;
+    margin-right: 1%;
+}
+
+.book-button:hover {
+    background-color: white;
+    color: #182d4e;
+    border: 2px solid #182d4e;
+    transition: 0.2s;
+}
+.main {
+    height: 83vh;
+    background-size: cover;
+    background-image: url('../../../assets/back.png');
+}

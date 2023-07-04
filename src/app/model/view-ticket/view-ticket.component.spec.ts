@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ViewTicketComponent } from './view-ticket.component';
+import { ViewTicketComponent } from './ViewTicketPopUp.component';
 
 describe('ViewTicketComponent', () => {
   let component: ViewTicketComponent;

@@ -1,0 +1,47 @@
+<div>
+    <mat-card style="overflow: auto;">
+        <div id="print">
+            <mat-card-content class="headercard">Booking Details</mat-card-content>
+            <div>
+                <div>
+                    <div>
+                        <label class="bookingdata">Bus/Trip Name : {{bookingData.busName}}</label><br>
+                        <label class="bookingdata">BookingDate : {{bookingData.bookedDate | date:'dd/MM/yyyy'}}</label>
+                        <label class="bookingdata floatr">BoardingTime : {{bookingData.bordingTime}}</label>
+                    </div>
+                    <div>
+                        <label class="bookingdata">From : {{bookingData.startCity}}</label>
+                        <label class="bookingdata floatr">To : {{bookingData.destinationCity}}</label>
+                    </div>
+                    <div>
+                        <label class="bookingdata">Ticket Charges: {{bookingData.fairPaid}} Rs</label>
+                    </div>
+                </div>
+                <div>
+                    <table style="width:100%">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Age</th>
+                                <th>Gender</th>
+                                <th>Seat_No</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let person of bookingData.passengers">
+                                <td>{{person.name}}</td>
+                                <td>{{person.age}}</td>
+                                <td>{{person.gender}}</td>
+                                <td>{{person.seatNo}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div>
+            <button class="btn-1" (click)="print('print')">Print Ticket</button>
+            <button class="btn-1" (click)="close()">close</button>
+        </div>
+    </mat-card>
+</div>

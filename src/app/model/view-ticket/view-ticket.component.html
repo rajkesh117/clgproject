@@ -1,1 +1,30 @@
-<p>view-ticket works!</p>
+<app-header></app-header>
+<div class="main">
+    <div>
+        <label style="font-size: 22px; font-weight: bold; margin-left: 45%;">Booked Tickets</label>
+    </div>
+    <div class="top-card com-font row" *ngIf="ticket">
+        <div class="tripdata" *ngFor="let data of ticket">
+            <mat-card>
+                <mat-card-content class="com-font bus-name">{{data.busName}}</mat-card-content>
+                <div>
+                    <label>StartDate : <span> {{data.bookedDate | date:'MMM d, y'}}</span></label>
+                    <label style="float: right;">BoardingTime :<span> {{data.bordingTime}}</span></label>
+                </div>
+                <div class="city-div">
+                    <label class="from-city">Bording City : {{data.startCity}}</label>
+                    <label class="to-city">Destination City : {{data.destinationCity}}</label>
+                </div>
+                <div>
+                    <label class="from-city">Booked by : {{data.bookedBy}}</label>
+                    <label class="to-city">{{data.fairPaid}} Rs</label>
+                </div>
+                <div>
+                    <button class="book-button" (click)="View(data)">View</button>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+</div>
+<ngx-spinner  style="color:white;" type="ball-scale-multiple">Loading...</ngx-spinner>
+<app-footer></app-footer>

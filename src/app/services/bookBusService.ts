@@ -24,4 +24,9 @@ export class bookBusService {
         const url = environment.apiUrl + 'api/BookTicket/BookorCancelTicket';
         return this.httpClient.post<any>(url, data);
     }
+
+    getAllBookingByUserId(userId:string){
+        const url = environment.apiUrl + 'api/BookTicket/GetTicketByUserId?userId='+userId;
+        return this.httpClient.get<any>(url);
+    }
 }

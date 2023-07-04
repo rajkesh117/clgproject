@@ -8,6 +8,7 @@ import { AuthGuard } from './services/authguard.service';
 import { AuthService } from './services/authService';
 import { AddTripComponent } from './model/admin-page/add-trip/add-trip.component';
 import { BookBusComponent } from './model/book-bus/book-bus.component';
+import { ViewTicketComponent } from './model/view-ticket/view-ticket.component';
 
 const routes: Routes = [
   { path: '', component: LoginPageComponent },
@@ -16,6 +17,8 @@ const routes: Routes = [
   { path: 'ShowBusComponent', component: ShowBusComponent, canActivate: [AuthGuard] },
   { path: 'addtrip', component: AddTripComponent, canActivate: [AuthGuard] },
   { path: 'bookticket', component: BookBusComponent, canActivate: [AuthGuard] },
+  { path: 'viewTicket', component: ViewTicketComponent, canActivate: [AuthGuard] },
+  
 ];
 
 @NgModule({

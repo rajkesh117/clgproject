@@ -39,7 +39,6 @@ import { HeaderComponent } from './model/header/header.component';
 import { FooterComponent } from './model/footer/footer.component';
 import { ShowBusComponent } from './model/show-bus/show-bus.component';
 import { BookBusComponent } from './model/book-bus/book-bus.component';
-import { ViewTicketComponent } from './model/view-ticket/view-ticket.component';
 import { ViewProfileComponent } from './model/view-profile/view-profile.component';
 import { LoginPageComponent } from './model/login-page/login-page.component';
 import { DatePipe } from '@angular/common';
@@ -47,6 +46,8 @@ import { AddTripComponent } from './model/admin-page/add-trip/add-trip.component
 import { AddEditTripDialougeComponent } from './model/dialouges/add-edit-trip-dialouge/add-edit-trip-dialouge.component';
 import { NgxSpinnerModule } from "ngx-spinner";
 import { MakepaymentComponent } from './model/dialouges/makepayment/makepayment.component';
+import { ViewTicketComponent } from './model/view-ticket/view-ticket.component';
+import { ViewticketdetailspopupComponent } from './model/dialouges/viewticketdetailspopup/viewticketdetailspopup.component';
 
 @NgModule({
   declarations: [
@@ -63,6 +64,7 @@ import { MakepaymentComponent } from './model/dialouges/makepayment/makepayment.
     AddTripComponent,
     AddEditTripDialougeComponent,
     MakepaymentComponent,
+    ViewticketdetailspopupComponent,
   ],
   imports: [
     BrowserModule,

@@ -36,7 +36,7 @@ export class MakepaymentComponent implements OnInit {
         if (res) {
           localStorage.removeItem('availableBuses');
           this.dialogRef.close();
-          this.router.navigate(['/HomepageComponent']);
+          this.router.navigate(['/viewTicket']);
         } else {
           window.alert("Seat Not Avaliable");
         }
