@@ -2,6 +2,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { busTicket } from 'src/app/Classes/Book_Bus_classes';
 import { bookBusService } from 'src/app/services/bookBusService';
 
 @Component({
@@ -35,4 +36,22 @@ export class ViewticketdetailspopupComponent implements OnInit {
     this.dialogRef.close();
   }
 
+  cancel(){
+    this.spinner.show();
+    //let Busticket =  this.bookingData as busTicket;
+    this.bookBus.cancelTicket(this.bookingData).subscribe(
+      (res) => {
+        this.spinner.hide();
+        if (res) {
+          window.alert("Ticket Canceled Successfull");
+          this.close();
+        } else {
+          window.alert("No Ticket Found in Database");
+        }
+      },
+      (error) => {
+        window.alert("Somthing went wrong");
+      }
+    )
+  }
 }

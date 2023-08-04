@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 export class HeaderComponent implements OnInit {
 
   username: string | undefined;
+  userRole: string | undefined;
   constructor(private router: Router) { }
 
   ngOnInit(): void {
@@ -17,8 +18,10 @@ export class HeaderComponent implements OnInit {
 
   getUSerDetails() {
     let username = localStorage.getItem('username');
-    if (username) {
+    let userRole = localStorage.getItem('userRole');
+    if (username && userRole) {
       this.username = username;
+      this.userRole = userRole
     }
   }
 

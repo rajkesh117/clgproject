@@ -165,6 +165,7 @@ export class LoginPageComponent implements OnInit {
       (res) => {
         if (res != null) {
           this.apiOTP = res;
+          console.log(res);
         }
         else {
           window.alert("Email already used by some one");

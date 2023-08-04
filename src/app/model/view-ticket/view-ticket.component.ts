@@ -29,6 +29,7 @@ export class ViewTicketComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
+      this.getTicketByUserId();
     });
   }
 
